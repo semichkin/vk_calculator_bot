@@ -7,6 +7,10 @@ const bot = new VkBot({
     group_id: process.env.VK_GROUP_ID
 });
 
+console.log('bot created.');
+
 const calculatorBot = new CalculatorBot(bot);
+
+console.log('bot exporting.');
 
 module.exports = calculatorBot.bot;
