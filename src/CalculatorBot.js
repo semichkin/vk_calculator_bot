@@ -104,9 +104,9 @@ class CalculatorBot {
             const text = ctx.message.text.trim();
             console.log('new message: ' + text);
             
-            if (text === '/start') {
+            if (['/start', 'start', 'начать', 'запустить', 'калькулятор'].includes(text.toLowerCase())) {
                 this.reset();
-                ctx.reply('Калькулятор запущен', null, Markup.keyboard(this.keyboard, { columns: 4 }));
+                ctx.reply('0', null, Markup.keyboard(this.keyboard, { columns: 4 }));
             } else if (this.keyboard.includes(text)) {
                 ctx.reply(this.handleButton(text));
             }
