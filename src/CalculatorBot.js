@@ -106,10 +106,20 @@ class CalculatorBot {
             
             if (text === '/start') {
                 this.reset();
-                ctx.reply('Калькулятор запущен', null, Markup.keyboard(this.keyboard, { columns: 4 }));
+                ctx.reply('0', null, Markup.keyboard(this.keyboard, { columns: 4 }));
             } else if (this.keyboard.includes(text)) {
                 ctx.reply(this.handleButton(text));
             }
+        });
+        
+        this.bot.command('/start', (ctx) => {
+            console.log('command /start');
+            ctx.reply('0', null, Markup.keyboard(this.keyboard, { columns: 4 }));
+        });
+        
+        this.bot.command('start', (ctx) => {
+            console.log('command start');
+            ctx.reply('0', null, Markup.keyboard(this.keyboard, { columns: 4 }));
         });
     }
 }
