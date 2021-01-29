@@ -102,6 +102,7 @@ class CalculatorBot {
     addListener() {
         this.bot.on((ctx) => {
             const text = ctx.message.text.trim();
+            console.log('new message: ' + text);
             
             if (text === '/start') {
                 this.reset();
